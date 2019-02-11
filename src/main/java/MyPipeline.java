@@ -6,6 +6,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.vision.VisionPipeline;
 import edu.wpi.first.vision.VisionThread;
 
+import edu.wpi.first.wpilibj.DigitalSource;
 import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
@@ -29,6 +30,8 @@ public class MyPipeline implements VisionPipeline {
     private ArrayList<MatOfPoint> findContoursOutput = new ArrayList<MatOfPoint>();
     private ArrayList<MatOfPoint> filterContoursOutput = new ArrayList<MatOfPoint>();
     private SocketServer server = new SocketServer(14578,""); //TODO get roborio port
+    private Lidar lidar = new Lidar(); //TODO make this work
+
     MjpegServer videoServer ;
     CvSource cvsource ;
 
@@ -131,7 +134,7 @@ public class MyPipeline implements VisionPipeline {
 
             }
         }
-        server.sendData(targets,);
+        server.sendData(targets,lidar.getDistance());
 
     }
 

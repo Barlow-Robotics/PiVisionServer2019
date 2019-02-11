@@ -18,7 +18,7 @@ public class SocketServer {
         this.ip = ip;
     }
 
-    public void sendData(ArrayList<RotatedRect> targets, int lidar){
+    public void sendData(ArrayList<RotatedRect> targets, double lidar){
         String toSend = "{" +
                         "\"Time\": " + System.currentTimeMillis() + "," +
                         "\"Targets\": [";
