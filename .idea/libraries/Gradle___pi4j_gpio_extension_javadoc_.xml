@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: :pi4j-gpio-extension-javadoc:">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/pi4j-gpio-extension-javadoc.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

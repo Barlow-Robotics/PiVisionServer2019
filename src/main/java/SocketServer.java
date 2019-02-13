@@ -14,6 +14,7 @@ public class SocketServer {
         try {
             socket = new DatagramSocket();
         }catch(Exception e){System.err.println(e);}
+
         this.port = port;
         this.ip = ip;
     }
@@ -33,13 +34,12 @@ public class SocketServer {
                         "},";
         }
 
-        toSend = toSend.substring(0,toSend.charAt(toSend.length()-1) == ',' ? toSend.length()-1 : toSend.length()) + "]";
+        toSend = toSend.substring(0,targets.size() > 0 ? toSend.length()-1 : toSend.length()) + "]";
         toSend += "\"Lidar\": " + lidar + "}";
 
         byte[] buf = toSend.getBytes();
-        DatagramPacket packet = null;
         try {
-            packet = new DatagramPacket(buf, buf.length, InetAddress.getByName(ip), port);
+            DatagramPacket packet = new DatagramPacket(buf, buf.length, InetAddress.getByName(ip), port);
             socket.send(packet);
         }catch(Exception e){
             System.err.println(e);

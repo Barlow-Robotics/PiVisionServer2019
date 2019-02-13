@@ -25,6 +25,7 @@ dependencies {
     compile name: 'opencv-344'
     compile name: 'wpilibj'
     compile name: 'wpiHal'
+    compile name: 'pi4j-core'
 }
 
 wrapper {
