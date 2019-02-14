@@ -42,6 +42,7 @@ public final class Main {
       theSink.setSource(theCamera);
 
       LLProcessImage LLProcessor = new LLProcessImage();
+      Lidar lidar = new Lidar();
 
       Mat theImage = new Mat();
       while (true) {
@@ -58,7 +59,7 @@ public final class Main {
           System.out.println("Failed to get frame");
         }
 
-        AlignmentPacket nPacket = new AlignmentPacket(null,rects,null,0,0,0);
+        AlignmentPacket nPacket = new AlignmentPacket(null,rects,null,0,0,lidar.getDistace());
         socketHandler.sendData(nPacket);
 
         long endTime = System.nanoTime();
