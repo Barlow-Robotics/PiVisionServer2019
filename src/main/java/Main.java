@@ -43,7 +43,7 @@ public final class Main {
 
       LLProcessImage LLProcessor = new LLProcessImage();
       Lidar lidar = new Lidar();
-
+      LimeLight limeLight = new LimeLight();
       Mat theImage = new Mat();
       while (true) {
         //System.out.println("Top of the loop") ;
@@ -58,8 +58,10 @@ public final class Main {
         } else {
           System.out.println("Failed to get frame");
         }
-
-        AlignmentPacket nPacket = new AlignmentPacket(null,rects,null,0,0,lidar.getDistace());
+        LimeLight.Target3D targ = limeLight.getCamTranslation();
+        double LLBearing = targ.rotation.y;
+        double LLRange = Math.sqrt((targ.translation.x*targ.translation.x)+(targ.translation.y*targ.translation.y));
+        AlignmentPacket nPacket = new AlignmentPacket(null,rects,null,LLBearing,LLRange,lidar.getDistace());
         socketHandler.sendData(nPacket);
 
         long endTime = System.nanoTime();
