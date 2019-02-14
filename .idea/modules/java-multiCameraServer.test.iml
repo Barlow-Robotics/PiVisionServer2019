@@ -15,10 +15,7 @@
     <orderEntry type="library" name="Gradle: :opencv-344:" level="project" />
     <orderEntry type="library" name="Gradle: :wpilibj:" level="project" />
     <orderEntry type="library" name="Gradle: :wpiHal:" level="project" />
-    <orderEntry type="library" name="Gradle: :pi4j-core-javadoc:" level="project" />
     <orderEntry type="library" name="Gradle: :pi4j-core:" level="project" />
-    <orderEntry type="library" name="Gradle: :pi4j-device-javadoc:" level="project" />
-    <orderEntry type="library" name="Gradle: :pi4j-gpio-extension-javadoc:" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="java-multiCameraServer.main" />
 </module>
