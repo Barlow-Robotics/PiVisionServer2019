@@ -33,7 +33,9 @@ public class SocketHandler{
         DatagramPacket packet;
         try {
             packet = new DatagramPacket(buf, buf.length,InetAddress.getByName(ip),port);
+            DatagramPacket packet2 = new DatagramPacket(buf, buf.length,InetAddress.getByName("10.45.72."),port);
             socket.send(packet);
+            socket.send(packet2);
         } catch (Exception e1) {
 
         }
@@ -42,13 +44,11 @@ public class SocketHandler{
 class AlignmentPacket{
     public RotatedRect[] Alignmentlines;
     public RotatedRect[] wallRects;
-    public RotatedRect centerLine;
     public double LLBearing,LLRange,lidarDist;
 
-    public AlignmentPacket(RotatedRect[] Alignmentlines, RotatedRect[] wallRects, RotatedRect centerLine,double LLBearing, double LLRange, double lidarDist){
+    public AlignmentPacket(RotatedRect[] Alignmentlines, RotatedRect[] wallRects,double LLBearing, double LLRange, double lidarDist){
         this.Alignmentlines = Alignmentlines;
         this.wallRects = wallRects;
-        this.centerLine = centerLine;
         this.LLBearing = LLBearing;
         this.LLRange = LLRange;
         this.lidarDist = lidarDist;
